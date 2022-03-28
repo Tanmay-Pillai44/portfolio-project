@@ -189,6 +189,7 @@ body .disable-body {
     margin-left: 75px;
     opacity: 0.99;
     transition: all 0.3s ease-out;
+    cursor: pointer;
 }
 
 .getresume-btn {
@@ -201,6 +202,7 @@ body .disable-body {
     float: left;
     margin-right: 30px;
     transition: all 0.3s ease-out;
+    cursor: pointer;
 }
 
 .hireme-btn:hover, .getresume-btn:hover {
