@@ -36,6 +36,21 @@ body .disable-body {
     font-weight: bold;
     font-size: 30px;
     color: #105652;
+    cursor: context-menu;
+    transition: all 0.3s ease-out;
+
+    text-shadow: 0 0 80px rgba(255,255,255,.5);
+    background: url("./animated-text-fill.png") repeat-y;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: aitf 80s linear infinite;
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;
+}
+
+.head-name:hover {
+    transform: scale(1.05);
 }
 
 .menu {
@@ -128,9 +143,90 @@ body .disable-body {
     background-color: #eeeeee;
 }
 
+/* animation banner */
+
+.banner-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.cube {
+    position: absolute;
+    top: 80%;
+    left: 45%;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #005c57;
+    border-radius: 1px;
+    transform-origin: top left;
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    animation: cube 12s ease-in  -1s infinite forwards;
+}
+
+@keyframes cube {
+    from {
+        transform: scale(0) rotate(0deg) translate(-50%, -50%);
+        opacity: 1;
+    }
+    to {
+        transform: scale(20) rotate(960deg) translate(-50%, -50%);
+        opacity: 0;
+    }
+}
+
+.cube:nth-child(2n) {
+    border-color: #365c5a;
+}
+
+.cube:nth-child(2) {
+    animation-delay: 0.5s;
+    left: 25%;
+    top: 40%;
+}
+.cube:nth-child(3) {
+    animation-delay: 2s;
+    left: 75%;
+    top: 50%;
+}
+
+.cube:nth-child(4) {
+    animation-delay: 3.5s;
+    left: 90%;
+    top: 10%;
+}
+
+.cube:nth-child(5) {
+    animation-delay: 5s;
+    left: 10%;
+    top: 85%;
+}
+
+.cube:nth-child(6) {
+    animation-delay: 6.5s;
+    left: 55%;
+    top: 10%;
+}
+
+.cube:nth-child(7) {
+    animation-delay: 8s;
+    left: 5%;
+    top: 10%;
+}
+
+.cube:nth-child(8) {
+    animation-delay: 9.5s;
+    left: 90%;
+    top: 85%;
+}
+
 /* banner */
 
 .banner {
+    position: relative;
     width: 100%;
     background-color: #105652;
 }
@@ -155,6 +251,7 @@ body .disable-body {
     color: #fca738;
     font-size: 40px;
     margin: -10px 0px 10px 75px;
+    cursor: context-menu;
 }
 
 .banner-developer {
@@ -162,12 +259,43 @@ body .disable-body {
     font-weight: bold;
     font-size: 32px;
     margin: 10px 0px 30px 75px;
+    animation: glow 2500ms linear infinite 2000ms;
+    cursor: context-menu;
+}
+
+@keyframes glow {
+    40% {
+        text-shadow: 0 0 8px #fff;
+    }
 }
 
 .banner-description {
     color: #FBF3E4;
-    font-size: 16px;
+    font-size: 17px;
     margin: 0px 0px 20px 75px;
+    padding: 10px 0px;
+    cursor: context-menu;
+
+    background-position: -100px;
+    background: linear-gradient(to right, darkgray 0, white 10%, darkgray 20%);
+    animation: shine 4s infinite linear;
+    animation-fill-mode: forwards;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-size-adjust: none;
+    white-space: nowrap;
+}
+
+@keyframes shine {
+    0% {
+        background-position: -100px;
+    }
+    60% {
+        background-position: 280px;
+    }
+    100% {
+        background-position: 280px;
+    }
 }
 
 .hireme-btn a, .getresume-btn a {
@@ -212,6 +340,7 @@ body .disable-body {
 .banner-img {
     width: 35%;
     margin: 0 auto;
+    z-index: 2;
 }
 
 /* About me */
@@ -252,6 +381,23 @@ body .disable-body {
     padding: 5px;
     border-bottom: 7px solid #FCA738;
     margin: 10px 0px 30px 0px;
+    cursor: context-menu;
+}
+
+.about-me:hover, .portfolio-heading:hover, .resume-heading:hover, .contact-heading:hover, .people-heading:hover {
+    text-shadow: 0 0 80px rgba(255,255,255,.5);
+    background: url("./animated-text-fill.png") repeat-y;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: aitf 80s linear infinite;
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;
+}
+
+@-webkit-keyframes aitf {
+	0% { background-position: 0% 50%; }
+	100% { background-position: 100% 50%; }
 }
 
 .skills-box {
@@ -305,6 +451,17 @@ body .disable-body {
 .portfolio-list a {
     width: 40%;
     margin: 5px;
+    position: relative;
+}
+
+.portfolio-list a:hover > img {
+    transform: scale(0.95);
+    opacity: 0.4;
+    box-shadow: 1px 1px 30px 2px rgb(65, 65, 65);
+}
+
+.portfolio-list a:hover > .view-project {
+    transform: scale(1);
 }
 
 .portfolio-list a img {
@@ -317,9 +474,27 @@ body .disable-body {
     border-radius: 15px;
 }
 
-.portfolio-list a img:hover {
-    transform: scale(0.98);
-    box-shadow: 1px 1px 30px 2px rgb(65, 65, 65);
+.view-project {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 30%;
+    left: 42%;
+    background-color: #09BEAD;
+    border-radius: 50%;
+    text-align: center;
+    transform: scale(0);
+    transition: all 0.3s ease-out;
+    box-shadow: 1px 1px 3px 2px #09BEAD;
+}
+
+.view-project p{
+    letter-spacing: 5px;
+    line-height: 1.5;
+    font-size: 11px;
+    font-weight: bold;
+    padding-left: 5%;
+    padding-top: 35%;
 }
 
 /* Resume */
@@ -618,6 +793,17 @@ body .disable-body {
     .banner-img {
         margin-left: -40px;
     }
+
+    .view-project {
+        width: 80px;
+        height: 80px;
+        top: 28%;
+        left: 42%;
+    }
+
+    .view-project p {
+        font-size: 9px;
+    }
 }
 
 @media only screen and (max-width:920px) {
@@ -692,11 +878,29 @@ body .disable-body {
     .contact-right {
         width: 100%;
     }
+
+    .view-project {
+        width: 80px;
+        height: 80px;
+        top: 26%;
+        left: 39%;
+    }
 }
 
 @media screen and (max-width:880px) {
     .skills-box {
         top: 620px;
+    }
+
+    .view-project {
+        width: 80px;
+        height: 80px;
+        top: 26%;
+        left: 39%;
+    }
+
+    .view-project p {
+        font-size: 9px;
     }
 }
 
@@ -753,6 +957,17 @@ body .disable-body {
         width: 100%;
         margin: 20px auto 0px;
     }
+
+    .view-project {
+        width: 100px;
+        height: 100px;
+        top: 31%;
+        left: 43%;
+    }
+
+    .view-project p {
+        font-size: 11px;
+    }
 }
 
 @media screen and (max-width: 716px) {
@@ -774,6 +989,15 @@ body .disable-body {
 
     .skills-box {
         top: 645px;
+    }
+
+    .view-project {
+        top: 28%;
+        left: 41%;
+    }
+
+    .view-project p {
+        font-size: 11px;
     }
 }
 
@@ -804,6 +1028,11 @@ body .disable-body {
 
     .skills-box {
         top: 625px;
+    }
+
+    .view-project {
+        top: 26%;
+        left: 41%;
     }
 }
 
@@ -854,6 +1083,31 @@ body .disable-body {
     .people-heading{
         font-size: 28px;
     }
+
+    .view-project {
+        width: 80px;
+        height: 80px;
+        top: 29%;
+        left: 42%;
+    }
+
+    .view-project p {
+        font-size: 9px;
+    }
+}
+
+@media screen and (max-width: 460px){
+    .view-project {
+        width: 70px;
+        height: 70px;
+        top: 27%;
+        left: 40%;
+    }
+
+    .view-project p {
+        padding-top: 36%;
+        font-size: 7px;
+    }
 }
 
 @media screen and (max-width: 395px) {
@@ -877,6 +1131,11 @@ body .disable-body {
     .people-heading {
         font-size: 24px;
     }
+
+    .view-project {
+        top: 25%;
+        left: 39%;
+    }
 }
 
 @media screen and (max-width: 361px) {
@@ -897,6 +1156,9 @@ body .disable-body {
         font-size: 14px;
     }
 
-
+    .view-project {
+        top: 21%;
+        left: 37%;
+    }
 }
 
