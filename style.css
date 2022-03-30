@@ -244,7 +244,7 @@ body .disable-body {
     float: left;
 }
 
-.about-me, .portfolio-heading, .resume-heading, .contact-heading {
+.about-me, .portfolio-heading, .resume-heading, .contact-heading, .people-heading {
     color: #105652;
     display: inline-block;
     font-size: 35px;
@@ -304,7 +304,7 @@ body .disable-body {
 
 .portfolio-list a {
     width: 40%;
-    margin: 10px;
+    margin: 5px;
 }
 
 .portfolio-list a img {
@@ -314,6 +314,7 @@ body .disable-body {
     box-shadow: 1px 1px 30px 5px rgb(192, 191, 191);
     transition: all 0.5s ease-out;
     cursor: pointer;
+    border-radius: 15px;
 }
 
 .portfolio-list a img:hover {
@@ -516,7 +517,79 @@ body .disable-body {
     margin-top: 100px;
 }
 
+/* What people say about me */
 
+.people-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.people-heading {
+    margin-top: 20px;
+}
+
+.people-innerbox {
+    width: 80%;
+    margin: 35px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 59px #10565221;
+}
+
+.flex-item {
+    width: 30%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.flex-item img {
+    border-radius: 50%;
+    margin: 10px auto;
+}
+
+.flex-item p {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.flex-item span {
+    display: inline-block;
+    color: darkgray;
+    margin: 5px;
+}
+
+.flex-item div {
+    width: 55%;
+    line-height: 1.5;
+    margin: 20px auto;
+    color: gray;
+}
+
+.people-footer {
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background-color: #FBF3E4;
+}
+
+.people-footer a {
+    color: #FCA738;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease-out;
+}
+
+.people-footer a:hover {
+    color: #ff9100;
+    font-size: 19px;
+}
 
 /* RESPONSIVE */
 
@@ -657,6 +730,29 @@ body .disable-body {
     .portfolio-list a {
         width: 80%;
     }
+
+    .people-box {
+        margin: 0px;
+    }
+
+    .people-innerbox {
+        width: 100%;
+        border-radius: 0px;
+        flex-direction: column;
+    }
+
+    .item-mobile {
+        display: none;
+    }
+
+    .flex-item {
+        width: 40%;
+    }
+
+    .flex-item div {
+        width: 100%;
+        margin: 20px auto 0px;
+    }
 }
 
 @media screen and (max-width: 716px) {
@@ -754,6 +850,10 @@ body .disable-body {
     .contact-right form {
         margin-left: 20px;
     }
+
+    .people-heading{
+        font-size: 28px;
+    }
 }
 
 @media screen and (max-width: 395px) {
@@ -773,6 +873,10 @@ body .disable-body {
     .skills-box {
         top: 800px;
     }
+
+    .people-heading {
+        font-size: 24px;
+    }
 }
 
 @media screen and (max-width: 361px) {
@@ -784,6 +888,15 @@ body .disable-body {
     .banner-img {
         margin-left: 15px;
     }
+
+    .flex-item p {
+        font-size: 16px;
+    }
+
+    .flex-item span {
+        font-size: 14px;
+    }
+
 
 }
 
