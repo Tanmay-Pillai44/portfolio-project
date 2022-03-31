@@ -273,12 +273,12 @@ body .disable-body {
     color: #FBF3E4;
     font-size: 17px;
     margin: 0px 0px 20px 75px;
-    padding: 10px 42px;
+    padding: 10px 0px;
     cursor: context-menu;
 
     background-position: -200px;
     background: linear-gradient(to right, darkgray 0, white 10%, darkgray 20%);
-    animation: shine 4s infinite linear alternate;
+    animation: shine 4s infinite linear forwards;
     animation-fill-mode: forwards;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
@@ -291,10 +291,10 @@ body .disable-body {
         background-position: -100px;
     }
     60% {
-        background-position: 200px;
+        background-position: 280px;
     }
     100% {
-        background-position: 200px;
+        background-position: 280px;
     }
 }
 
