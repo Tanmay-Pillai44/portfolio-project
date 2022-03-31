@@ -273,12 +273,12 @@ body .disable-body {
     color: #FBF3E4;
     font-size: 17px;
     margin: 0px 0px 20px 75px;
-    padding: 10px 0px;
+    padding: 10px 42px;
     cursor: context-menu;
 
-    background-position: -100px;
+    background-position: -200px;
     background: linear-gradient(to right, darkgray 0, white 10%, darkgray 20%);
-    animation: shine 4s infinite linear;
+    animation: shine 4s infinite linear alternate;
     animation-fill-mode: forwards;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
@@ -291,10 +291,10 @@ body .disable-body {
         background-position: -100px;
     }
     60% {
-        background-position: 280px;
+        background-position: 200px;
     }
     100% {
-        background-position: 280px;
+        background-position: 200px;
     }
 }
 
@@ -510,7 +510,7 @@ body .disable-body {
     margin-top: 60px;
     width: 2px;
     height: 230px;
-    background-color: #0ABEAD
+    background-color: #0ABEAD;
 }
 
 .resume-left {
@@ -521,12 +521,25 @@ body .disable-body {
 .resume-right {
     margin-left: 30px;
     width: 30%;
+    position: relative;
+    top: -40px;
     display: flex;
     justify-content: center;
     /* height: 500px; */
-    background-color: white;
+    /* background-color: white;
     border-radius: 20px;
-    box-shadow: 1px 2px 50px 5px lightgray;
+    box-shadow: 1px 2px 50px 5px lightgray; */
+}
+
+#myCanvas, #tags {
+    /* transition: transform 200ms linear; */
+    animation: rotate 12s linear infinite;
+    /* transform-style: preserve-3d; */
+}
+
+@keyframes rotate {
+    0% {background-position: 0 0;}
+    100% {background-position: 630px 0;}
 }
 
 .education {
@@ -784,6 +797,23 @@ body .disable-body {
 
     .marks {
         font-size: 13px;
+    }
+
+    .resume-innerbox {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        /* position: relative; */
+    }
+
+    .vertical-line {
+        display: none;
+    }
+
+    .resume-left, .resume-right {
+        width: 90%;
+        margin-top: 40px;
     }
 
     .resume-left span {
@@ -1135,6 +1165,11 @@ body .disable-body {
     .view-project {
         top: 25%;
         left: 39%;
+    }
+
+    #myCanvas {
+        width: 350px;
+        height: 350px;
     }
 }
 
